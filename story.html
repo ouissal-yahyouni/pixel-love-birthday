@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Story 💕</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      overflow:hidden;
+      background:#070010;
+      font-family:'Pixelify Sans',sans-serif;
+    }
+
+    .page{
+      width:100vw;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      padding:20px;
+    }
+
+    /* Romantic Background */
+    .bg{
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,79,179,.45), transparent 35%),
+        radial-gradient(circle at 80% 25%, rgba(192,132,252,.35), transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(255,0,170,.25), transparent 40%),
+        radial-gradient(circle at 70% 70%, rgba(255,255,255,.08), transparent 30%);
+      filter:blur(120px);
+      animation: romanticMove 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes romanticMove{
+      0%{
+        transform:scale(1) translate(-20px,-20px);
+      }
+      100%{
+        transform:scale(1.15) translate(20px,20px);
+      }
+    }
+
+    /* Stars */
+    .stars{
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+      pointer-events:none;
+    }
+
+    .star{
+      position:absolute;
+      background:white;
+      border-radius:50%;
+      animation:twinkle var(--d) infinite alternate;
+    }
+
+    @keyframes twinkle{
+      from{
+        opacity:.1;
+      }
+      to{
+        opacity:1;
+      }
+    }
+
+    /* Floating Hearts */
+    .floating-heart{
+      position:absolute;
+      bottom:-50px;
+      font-size:18px;
+      animation:floatHeart linear infinite;
+      opacity:.7;
+      pointer-events:none;
+    }
+
+    @keyframes floatHeart{
+      0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+      }
+      10%{
+        opacity:.8;
+      }
+      100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+      }
+    }
+
+    /* Romantic Glass Card */
+    .content{
+      position:relative;
+      z-index:2;
+      width:90%;
+      max-width:950px;
+      max-height:80vh;
+      overflow-y:auto;
+
+      padding:40px;
+
+      border-radius:35px;
+
+      background:rgba(255,255,255,.07);
+
+      backdrop-filter:blur(18px);
+
+      border:1px solid rgba(255,255,255,.15);
+
+      box-shadow:
+        0 0 40px rgba(255,79,179,.3),
+        0 0 80px rgba(192,132,252,.18);
+
+      animation:cardFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes cardFloat{
+      0%,100%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-8px);
+      }
+    }
+
+    /* Scrollbar */
+    .content::-webkit-scrollbar{
+      width:8px;
+    }
+
+    .content::-webkit-scrollbar-thumb{
+      background:linear-gradient(#ff4fb3,#c084fc);
+      border-radius:20px;
+    }
+
+    .content::-webkit-scrollbar-track{
+      background:transparent;
+    }
+
+    /* Title */
+    .pixel-title{
+      font-family:'Press Start 2P',cursive;
+      font-size:18px;
+      text-align:center;
+      margin-bottom:35px;
+      line-height:1.8;
+
+      background:linear-gradient(
+        90deg,
+        #ff4fb3,
+        #c084fc,
+        #ffffff,
+        #ff4fb3
+      );
+
+      background-size:300%;
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+
+      animation:shine 5s linear infinite;
+    }
+
+    @keyframes shine{
+      0%{
+        background-position:0%;
+      }
+      100%{
+        background-position:300%;
+      }
+    }
+
+    /* Romantic Text */
+    .text{
+      font-size:19px;
+      line-height:2.2;
+      color:#ffe6f7;
+      text-align:center;
+      letter-spacing:.4px;
+
+      text-shadow:0 0 10px rgba(255,255,255,.15);
+    }
+
+    .highlight{
+      color:#ffffff;
+      font-weight:bold;
+    }
+
+    /* Sparkles */
+    .sparkle{
+      position:absolute;
+      color:white;
+      animation:sparkle 2s infinite ease-in-out;
+      pointer-events:none;
+    }
+
+    @keyframes sparkle{
+      0%,100%{
+        transform:scale(0.5);
+        opacity:.2;
+      }
+      50%{
+        transform:scale(1.4);
+        opacity:1;
+      }
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+
+      .content{
+        padding:25px;
+        width:95%;
+      }
+
+      .pixel-title{
+        font-size:12px;
+      }
+
+      .text{
+        font-size:16px;
+        line-height:2;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="logo">💗 PIXEL LOVE</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="story.html">STORY</a></li>
+        <li><a href="memories.html">MEMORIES</a></li>
+        <li><a href="terminal.html">TERMINAL</a></li>
+        <li><a href="birthday.html">FINAL</a></li>
+    </ul>
+
+</nav>
+
+<style>
+
+/* NAVBAR */
+
+.navbar{
+    width:90%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 60px;
+    position:relative;
+    z-index:100;
+    
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 0 20px rgba(255,105,180,0.15);
+}
+
+/* LOGO */
+
+.logo{
+    font-family:'Press Start 2P',cursive;
+    font-size:14px;
+    color:white;
+
+    text-shadow:
+        0 0 10px #ff66cc,
+        0 0 20px #ff66cc,
+        0 0 35px #ff1493;
+
+    animation:logoGlow 2s infinite alternate;
+}
+
+@keyframes logoGlow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.03);
+    }
+
+}
+
+/* LINKS */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    list-style:none;
+}
+
+/* LINK STYLE */
+
+.nav-links a{
+    position:relative;
+
+    text-decoration:none;
+    color:white;
+
+    font-family:'Pixelify Sans',sans-serif;
+    font-size:18px;
+    letter-spacing:1px;
+
+    transition:0.35s ease;
+}
+
+/* HOVER */
+
+.nav-links a:hover{
+    color:#ffd6f4;
+    text-shadow:
+        0 0 10px #ff66cc;
+
+    transform:translateY(-3px);
+}
+
+/* ANIMATED UNDERLINE */
+
+.nav-links a::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:3px;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        90deg,
+        #ff66cc,
+        #ff9de2,
+        white
+    );
+
+    transition:0.4s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* ACTIVE PAGE */
+
+.nav-links a.active{
+    color:#ffd6f4;
+
+    text-shadow:
+        0 0 10px #ff66cc;
+}
+
+.nav-links a.active::after{
+    width:100%;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .navbar{
+        flex-direction:column;
+        gap:22px;
+        padding:20px;
+    }
+
+    .logo{
+        font-size:12px;
+        text-align:center;
+        line-height:1.8;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+    }
+
+    .nav-links a{
+        font-size:16px;
+    }
+
+}
+
+</style>
+
+<section class="page">
+
+
+  <!-- Romantic Background -->
+  <div class="bg"></div>
+
+  <!-- Stars -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Sparkles -->
+  <div class="sparkle" style="top:10%; left:15%; font-size:18px;">✦</div>
+  <div class="sparkle" style="top:20%; right:18%; font-size:14px; animation-delay:.8s;">✨</div>
+  <div class="sparkle" style="bottom:15%; left:12%; font-size:16px; animation-delay:1.5s;">✧</div>
+  <div class="sparkle" style="bottom:20%; right:15%; font-size:18px; animation-delay:.4s;">✨</div>
+
+  <!-- Romantic Message -->
+  <div class="content">
+
+    <h1 class="pixel-title">
+      OUR STORY 💕
+    </h1>
+
+    <p class="text">
+
+      <span class="highlight">
+        To The Man I Want To Spend My Whole Life With 💍
+      </span>
+
+      <br><br>
+
+      I still remember the very first time we met—how I fell in love with you and your smile, and how everything happened so unexpectedly.
+
+      Neither of us planned this; I believe it was God who made it happen because He knew we both needed each other to complete the love story He wrote for us.
+
+      I am beyond blessed and thankful that someone like you came into my life. ✨
+
+      <br>
+
+
+  
+      <br><br>
+
+      Thank you for coming into my life, for loving me unconditionally, for motivating me every day to feel beautiful, and for always holding my hand so tight that I know you will never let me go. 🤝
+
+      <br><br>
+
+      I want you to know that:
+
+      <br><br>
+
+      ✦ I want us to grow old together 🌱
+      <br>
+
+      ✦ I want us to succeed together ❤️
+      <br>
+
+      ✦ I want us to build dreams and a home filled with love 🏠🤍
+
+      <br><br>
+
+      I love you with every ounce of my being.
+
+      Rest assured that you have me, my heart, and my soul. 🏹
+
+    </p>
+
+  </div>
+
+</section>
+
+<script>
+
+  /* Stars */
+  const starsEl = document.getElementById('stars');
+
+  for(let i = 0; i < 100; i++){
+
+    const star = document.createElement('div');
+
+    star.className = 'star';
+
+    const size = Math.random() < 0.3 ? 4 : 2;
+
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+
+    star.style.width = size + 'px';
+    star.style.height = size + 'px';
+
+    star.style.setProperty('--d', (1 + Math.random() * 3) + 's');
+
+    starsEl.appendChild(star);
+  }
+
+  /* Floating Hearts */
+  const hearts = ["💖","💕","💗","💘","🤍"];
+
+  for(let i = 0; i < 30; i++){
+
+    const heart = document.createElement('div');
+
+    heart.className = 'floating-heart';
+
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left = Math.random() * 100 + 'vw';
+
+    heart.style.fontSize = (14 + Math.random() * 18) + 'px';
+
+    heart.style.animationDuration = (6 + Math.random() * 6) + 's';
+
+    heart.style.animationDelay = (Math.random() * 6) + 's';
+
+    document.body.appendChild(heart);
+  }
+
+</script>
+
+</body>
+</html>

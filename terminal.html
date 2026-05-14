@@ -1,0 +1,628 @@
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="logo">💖 PIXEL LOVE</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="story.html">STORY</a></li>
+        <li><a href="memories.html">MEMORIES</a></li>
+        <li><a href="terminal.html" class="active">TERMINAL</a></li>
+        <li><a href="birthday.html">FINAL</a></li>
+    </ul>
+
+</nav>
+
+<section class="page">
+
+    <!-- animated background -->
+    <div class="bg"></div>
+
+    <!-- floating glow -->
+    <span class="float f1">💗</span>
+    <span class="float f2">✨</span>
+    <span class="float f3">💕</span>
+
+    <!-- TERMINAL -->
+    <div class="terminal-window">
+
+        <div class="terminal-top">
+            <div class="dots">
+                <span class="red"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+            </div>
+
+            <p>ouissal@pixel-love: ~/birthday_project</p>
+        </div>
+
+        <div class="terminal-body">
+
+            <div class="line">
+                <span class="user">ouissal@pixel-love</span>
+                <span class="path">:~/birthday_project$</span>
+                <span class="command"> ls</span>
+            </div>
+
+            <div class="files">
+                story.html &nbsp;&nbsp;
+                memories.html &nbsp;&nbsp;
+                birthday.html &nbsp;&nbsp;
+                love.exe
+            </div>
+
+            <div class="line">
+                <span class="user">ouissal@pixel-love</span>
+                <span class="path">:~/birthday_project$</span>
+                <span class="command"> ./love.exe</span>
+            </div>
+
+            <div class="success">
+                ✔ initializing feelings...
+            </div>
+
+            <div class="success">
+                ✔ loading hugs...
+            </div>
+
+            <div class="success">
+                ✔ loading kisses...
+            </div>
+
+            <div class="success">
+                ✔ connection established successfully
+            </div>
+
+            <div class="line">
+                <span class="user">ouissal@pixel-love</span>
+                <span class="path">:~/birthday_project$</span>
+                <span id="typed"></span>
+                <span class="cursor">█</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- HEART CARD -->
+    <div class="heart-wrapper">
+
+        <div class="heart">
+
+            <!-- ROW 1 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel pink"></div>
+            <div class="pixel pink"></div>
+            <div class="pixel pink"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+
+            <div class="pixel"></div>
+            <div class="pixel pink"></div>
+            <div class="pixel pink"></div>
+            <div class="pixel pink"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+
+            <!-- ROW 2 -->
+            <div class="pixel"></div>
+            <div class="pixel pink"></div>
+            <div class="pixel soft-pink"></div>
+            <div class="pixel soft-pink"></div>
+            <div class="pixel soft-pink"></div>
+            <div class="pixel pink"></div>
+            <div class="pixel"></div>
+
+            <div class="pixel pink"></div>
+            <div class="pixel soft-pink"></div>
+            <div class="pixel soft-pink"></div>
+            <div class="pixel soft-pink"></div>
+            <div class="pixel pink"></div>
+            <div class="pixel"></div>
+
+        </div>
+
+        <h1>HAPPY BIRTHDAY 💗</h1>
+
+        <p>
+            loading love.exe... <br><br>
+            You are my favorite glitch in the system 💕
+        </p>
+
+    </div>
+
+</section>
+
+<style>
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#090011;
+    overflow-x:hidden;
+    font-family:'Pixelify Sans',sans-serif;
+    color:white;
+}
+
+/* PAGE */
+
+.page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;
+    flex-wrap:wrap;
+    padding:140px 20px 50px;
+    position:relative;
+    overflow:hidden;
+}
+
+/* BACKGROUND */
+
+.bg{
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at 20% 20%, #ff4fb3, transparent 35%),
+    radial-gradient(circle at 80% 30%, #7a5cff, transparent 40%),
+    radial-gradient(circle at 50% 90%, #00ffd5, transparent 35%);
+
+    filter:blur(100px);
+    opacity:0.35;
+
+    animation:bgMove 8s infinite alternate ease-in-out;
+}
+
+@keyframes bgMove{
+
+    0%{
+        transform:translate(-30px,-20px);
+    }
+
+    100%{
+        transform:translate(40px,30px);
+    }
+
+}
+
+/* NAVBAR */
+
+.navbar{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:22px 60px;
+
+    background:rgba(10,0,20,0.45);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 0 25px rgba(255,0,140,0.15);
+}
+
+/* LOGO */
+
+.logo{
+    font-family:'Press Start 2P',cursive;
+    font-size:14px;
+
+    color:white;
+
+    text-shadow:
+    0 0 10px #ff4fb3,
+    0 0 25px #ff4fb3;
+
+    animation:logoPulse 2s infinite alternate;
+}
+
+@keyframes logoPulse{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.04);
+    }
+
+}
+
+/* LINKS */
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#f6dfff;
+
+    font-size:18px;
+    letter-spacing:1px;
+
+    position:relative;
+
+    transition:0.35s;
+}
+
+.nav-links a:hover{
+    color:white;
+
+    text-shadow:
+    0 0 12px #ff4fb3;
+
+    transform:translateY(-2px);
+}
+
+.nav-links a::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:3px;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        90deg,
+        #ff4fb3,
+        #ff9de2,
+        white
+    );
+
+    transition:0.4s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+
+/* TERMINAL */
+
+.terminal-window{
+    width:540px;
+
+    background:#0d1117;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 0 35px rgba(0,0,0,0.5),
+    0 0 30px rgba(255,0,140,0.18);
+
+    position:relative;
+    z-index:2;
+
+    animation:terminalFloat 4s ease-in-out infinite;
+}
+
+@keyframes terminalFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+/* TOP BAR */
+
+.terminal-top{
+    background:#161b22;
+
+    padding:14px 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.terminal-top p{
+    font-size:13px;
+    color:#8b949e;
+}
+
+.dots{
+    display:flex;
+    gap:8px;
+}
+
+.dots span{
+    width:13px;
+    height:13px;
+    border-radius:50%;
+}
+
+.red{
+    background:#ff5f56;
+}
+
+.yellow{
+    background:#ffbd2e;
+}
+
+.green{
+    background:#27c93f;
+}
+
+/* TERMINAL BODY */
+
+.terminal-body{
+    padding:25px;
+    font-family:monospace;
+    font-size:16px;
+    line-height:1.8;
+}
+
+/* COMMAND LINE */
+
+.line{
+    margin-bottom:8px;
+}
+
+.user{
+    color:#58a6ff;
+}
+
+.path{
+    color:#a371f7;
+}
+
+.command{
+    color:#f0f6fc;
+}
+
+/* FILES */
+
+.files{
+    color:#7ee787;
+    margin-bottom:20px;
+}
+
+/* SUCCESS */
+
+.success{
+    color:#3fb950;
+}
+
+/* CURSOR */
+
+.cursor{
+    color:#58a6ff;
+    animation:blink 0.8s infinite;
+}
+
+@keyframes blink{
+
+    0%,50%{
+        opacity:1;
+    }
+
+    51%,100%{
+        opacity:0;
+    }
+
+}
+
+/* HEART WRAPPER */
+
+.heart-wrapper{
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,0.06);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+    0 0 30px rgba(255,0,140,0.15);
+}
+
+/* HEART */
+
+.heart{
+    display:inline-grid;
+    grid-template-columns:repeat(13,20px);
+    gap:1px;
+
+    animation:heartBeat 2s infinite ease-in-out;
+}
+
+.pixel{
+    width:20px;
+    height:20px;
+}
+
+.pink{
+    background:#ff4b6e;
+}
+
+.soft-pink{
+    background:#ff9bb5;
+}
+
+.white{
+    background:#ffe7ee;
+}
+
+@keyframes heartBeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+}
+
+/* TITLE */
+
+h1{
+    margin-top:25px;
+
+    font-family:'Press Start 2P',cursive;
+
+    font-size:20px;
+
+    text-shadow:
+    0 0 15px #ff4fb3;
+}
+
+/* TEXT */
+
+.heart-wrapper p{
+    margin-top:18px;
+
+    color:#ffd6f3;
+
+    line-height:1.8;
+
+    font-size:16px;
+}
+
+/* FLOATING ICONS */
+
+.float{
+    position:absolute;
+    font-size:30px;
+
+    opacity:0.7;
+
+    animation:float 6s infinite ease-in-out;
+}
+
+.f1{
+    top:15%;
+    left:10%;
+}
+
+.f2{
+    top:25%;
+    right:15%;
+    animation-delay:1s;
+}
+
+.f3{
+    bottom:10%;
+    left:50%;
+    animation-delay:2s;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-25px);
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+        padding:20px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+    }
+
+    .terminal-window{
+        width:100%;
+        max-width:520px;
+    }
+
+    .heart{
+        transform:scale(0.8);
+    }
+
+    h1{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+}
+
+</style>
+
+<script>
+
+const text =
+' ./love.exe\\n' +
+' ERROR: missing sadness.dll\\n' +
+' FIXING EMOTIONS...\\n' +
+' STATUS: deeply in love 💗';
+
+let i = 0;
+
+function typeWriter(){
+
+    if(i < text.length){
+
+        document.getElementById("typed").innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typeWriter, 50);
+    }
+}
+
+window.onload = typeWriter;
+
+</script>

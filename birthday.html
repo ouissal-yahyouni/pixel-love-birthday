@@ -1,0 +1,410 @@
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #120018;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+
+  .page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* CARD */
+
+  .glow-card {
+    position: relative;
+    z-index: 10;
+    width: 420px;
+    padding: 40px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.4);
+    text-align: center;
+    color: white;
+  }
+
+  .pixel-title {
+    font-size: 40px;
+    color: #ff66d9;
+    text-shadow:
+      0 0 10px #ff66d9,
+      0 0 20px #ff00ff,
+      0 0 40px #ff00ff;
+  }
+
+  .glow-card p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #ffe8ff;
+  }
+
+  .glow-card h2 {
+    color: #ff9cf5;
+    text-shadow: 0 0 15px #ff00ff;
+  }
+
+  /* CUBE */
+
+  .cube {
+    --size: 200px;
+
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+
+    transform-style: preserve-3d;
+    animation: girar 10s linear infinite;
+  }
+
+  .cube .side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff00ff55;
+    border: 2px solid #ff66ff;
+    box-shadow: 0 0 20px #ff00ff inset;
+  }
+
+  /* FRONT */
+  .cube .front {
+    transform: translateZ(calc(var(--size) / 2));
+  }
+
+  /* BACK */
+  .cube .behind {
+    transform: rotateY(180deg) translateZ(calc(var(--size) / 2));
+  }
+
+  /* RIGHT */
+  .cube .right {
+    transform: rotateY(90deg) translateZ(calc(var(--size) / 2));
+  }
+
+  /* LEFT */
+  .cube .left {
+    transform: rotateY(-90deg) translateZ(calc(var(--size) / 2));
+  }
+
+  /* TOP */
+  .cube .top {
+    transform: rotateX(90deg) translateZ(calc(var(--size) / 2));
+  }
+
+  /* BOTTOM */
+  .cube .under {
+    transform: rotateX(-90deg) translateZ(calc(var(--size) / 2));
+  }
+
+  /* HEART CENTER */
+
+  .circle-center {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* HEART */
+
+  .heart-container {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .heart-container::before,
+  .heart-container::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #ff00aa;
+    border-radius: 50%;
+  }
+
+  .heart-container::before {
+    top: -25px;
+    left: 0;
+  }
+
+  .heart-container::after {
+    top: 0;
+    left: 25px;
+  }
+
+  .heart-container {
+    background: #ff00aa;
+  }
+
+  /* GRID LINES */
+
+  .line {
+    position: absolute;
+    background: #ff00ff;
+  }
+
+  .vertical-line {
+    width: 4px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .horizontal-line {
+    width: 100%;
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* VIEWPORT */
+
+  .cube-viewport {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(rgba(255, 0, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 0, 255, 0.05) 1px, transparent 1px);
+
+    background-size: 40px 40px;
+  }
+
+  /* ANIMATION */
+
+  @keyframes girar {
+    0% {
+      transform: rotateX(-20deg) rotateY(0deg);
+    }
+
+    100% {
+      transform: rotateX(-20deg) rotateY(360deg);
+    }
+  }
+  
+
+</style>
+<section class="page">
+
+<!-- Navbar -->
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="logo">💗 PIXEL LOVE</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="story.html">STORY</a></li>
+        <li><a href="memories.html">MEMORIES</a></li>
+        <li><a href="terminal.html">TERMINAL</a></li>
+        <li><a href="birthday.html">FINAL</a></li>
+    </ul>
+
+</nav>
+
+<style>
+
+/* NAVBAR */
+
+.navbar{
+    width:80%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 60px;
+    position:relative;
+    z-index:100;
+    
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 0 20px rgba(255,105,180,0.15);
+}
+
+/* LOGO */
+
+.logo{
+    font-family:'Press Start 2P',cursive;
+    font-size:14px;
+    color:white;
+
+    text-shadow:
+        0 0 10px #ff66cc,
+        0 0 20px #ff66cc,
+        0 0 35px #ff1493;
+
+    animation:logoGlow 2s infinite alternate;
+}
+
+@keyframes logoGlow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.03);
+    }
+
+}
+
+/* LINKS */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    list-style:none;
+}
+
+/* LINK STYLE */
+
+.nav-links a{
+    position:relative;
+
+    text-decoration:none;
+    color:white;
+
+    font-family:'Pixelify Sans',sans-serif;
+    font-size:18px;
+    letter-spacing:1px;
+
+    transition:0.35s ease;
+}
+
+/* HOVER */
+
+.nav-links a:hover{
+    color:#ffd6f4;
+    text-shadow:
+        0 0 10px #ff66cc;
+
+    transform:translateY(-3px);
+}
+
+/* ANIMATED UNDERLINE */
+
+.nav-links a::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:3px;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        90deg,
+        #ff66cc,
+        #ff9de2,
+        white
+    );
+
+    transition:0.4s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* ACTIVE PAGE */
+
+.nav-links a.active{
+    color:#ffd6f4;
+
+    text-shadow:
+        0 0 10px #ff66cc;
+}
+
+.nav-links a.active::after{
+    width:100%;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .navbar{
+        flex-direction:column;
+        gap:22px;
+        padding:20px;
+    }
+
+    .logo{
+        font-size:12px;
+        text-align:center;
+        line-height:1.8;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+    }
+
+    .nav-links a{
+        font-size:16px;
+    }
+
+}
+
+</style>
+  <div class="glow-card">
+    <h1 class="pixel-title">HAPPY BIRTHDAY 💗</h1>
+
+    <p>Thank you for every memory, every smile, and every moment.</p>
+
+    <p>You make life more beautiful ✨</p>
+
+    <h2>MISSION COMPLETE 💕</h2>
+  </div>
+
+  <main class="cube-viewport"></main>
+
+  <section class="cube">
+    <article class="side front">
+      <div class="vertical-line line"></div>
+      <div class="horizontal-line line"></div>
+
+      <div class="circle-center">
+        <div class="heart-container"></div>
+      </div>
+    </article>
+
+    <article class="side behind"></article>
+    <article class="side right"></article>
+    <article class="side left"></article>
+    <article class="side top"></article>
+    <article class="side under"></article>
+  </section>
+</section>

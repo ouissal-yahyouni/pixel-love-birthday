@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Happy Birthday 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at top,#ff8fd8 0%,#ff5cb8 30%,#1a0013 100%);
+    font-family:'Pixelify Sans',sans-serif;
+    color:white;
+    position:relative;
+}
+
+/* Animated background */
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size:40px 40px;
+    animation:bgMove 10s linear infinite;
+    z-index:0;
+}
+
+@keyframes bgMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(40px);
+    }
+}
+
+/* Floating hearts */
+
+.hearts{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:1;
+}
+
+.hearts span{
+    position:absolute;
+    bottom:-50px;
+    color:#ffb6e6;
+    font-size:20px;
+    animation:float linear infinite;
+    opacity:0.7;
+}
+
+.hearts span:nth-child(1){
+    left:10%;
+    animation-duration:8s;
+}
+
+.hearts span:nth-child(2){
+    left:25%;
+    animation-duration:12s;
+    font-size:30px;
+}
+
+.hearts span:nth-child(3){
+    left:45%;
+    animation-duration:10s;
+}
+
+.hearts span:nth-child(4){
+    left:65%;
+    animation-duration:7s;
+    font-size:28px;
+}
+
+.hearts span:nth-child(5){
+    left:85%;
+    animation-duration:11s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Navbar */
+
+.navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    position:relative;
+    z-index:10;
+}
+
+.logo{
+    font-family:'Press Start 2P',cursive;
+    font-size:14px;
+    color:#fff;
+    text-shadow:
+        0 0 10px #ff66cc,
+        0 0 20px #ff66cc;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    transition:0.3s;
+    position:relative;
+}
+
+.nav-links a:hover{
+    color:#ffd6f4;
+    transform:translateY(-2px);
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#fff;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* Main section */
+
+.page{
+    width:100%;
+    height:calc(100vh - 100px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    z-index:5;
+}
+
+/* Main Card */
+
+.glow-card{
+    width:600px;
+    padding:50px;
+    border:4px solid #ffb3df;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border-radius:25px;
+    text-align:center;
+    position:relative;
+    box-shadow:
+        0 0 25px #ff4db8,
+        inset 0 0 20px rgba(255,255,255,0.15);
+    animation:cardFloat 3s ease-in-out infinite;
+}
+
+@keyframes cardFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.glow-card p{
+    font-size:20px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+}
+
+.pixel-title{
+    font-family:'Press Start 2P',cursive;
+    font-size:38px;
+    line-height:1.6;
+    margin-bottom:30px;
+    color:#fff;
+    text-shadow:
+        0 0 10px #ff80d5,
+        0 0 20px #ff4db8,
+        0 0 35px #ff1493;
+}
+
+/* Button */
+
+.pixel-btn{
+    margin-top:20px;
+    padding:18px 40px;
+    border:none;
+    background:#ff4db8;
+    color:white;
+    font-family:'Press Start 2P',cursive;
+    font-size:14px;
+    cursor:pointer;
+    border-radius:14px;
+    transition:0.3s;
+    box-shadow:
+        0 0 15px #ff4db8;
+}
+
+.pixel-btn:hover{
+    transform:scale(1.08);
+    background:#ff66c4;
+    box-shadow:
+        0 0 25px #ff66c4,
+        0 0 40px #ff66c4;
+}
+
+/* Ghost */
+
+#ghost{
+    position:absolute;
+    right:60px;
+    bottom:40px;
+    scale:0.8;
+    z-index:3;
+    filter:
+        drop-shadow(0 0 20px #ff2d96);
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+        padding:20px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .glow-card{
+        width:90%;
+        padding:35px 20px;
+    }
+
+    .pixel-title{
+        font-size:24px;
+    }
+
+    #ghost{
+        right:-10px;
+        bottom:-20px;
+        scale:0.55;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<div class="hearts">
+    <span>💗</span>
+    <span>💖</span>
+    <span>💕</span>
+    <span>💘</span>
+    <span>💞</span>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+
+    <div class="logo">💗 PIXEL LOVE</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="story.html">STORY</a></li>
+        <li><a href="memories.html">MEMORIES</a></li>
+        <li><a href="terminal.html">TERMINAL</a></li>
+        <li><a href="birthday.html">FINAL</a></li>
+    </ul>
+
+</nav>
+
+<!-- Main Page -->
+<section class="page">
+
+    <div class="glow-card">
+
+        <p>PLAYER 01 CONNECTED</p>
+
+        <h1 class="pixel-title">
+            HAPPY <br> BIRTHDAY 💗
+        </h1>
+
+        <p>
+            Welcome to your pixel love adventure ✨
+        </p>
+
+        <button
+            class="pixel-btn"
+            onclick="location.href='story.html'"
+        >
+            START GAME
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Ghost -->
+<div id="ghost">
+  <div id="red">
+    <div id="pupil"></div>
+    <div id="pupil1"></div>
+    <div id="eye"></div>
+    <div id="eye1"></div>
+    <div id="top0"></div>
+    <div id="top1"></div>
+    <div id="top2"></div>
+    <div id="top3"></div>
+    <div id="top4"></div>
+    <div id="st0"></div>
+    <div id="st1"></div>
+    <div id="st2"></div>
+    <div id="st3"></div>
+    <div id="st4"></div>
+    <div id="st5"></div>
+    <div id="an1"></div>
+    <div id="an2"></div>
+    <div id="an3"></div>
+    <div id="an4"></div>
+    <div id="an5"></div>
+    <div id="an6"></div>
+    <div id="an7"></div>
+    <div id="an8"></div>
+    <div id="an9"></div>
+    <div id="an10"></div>
+    <div id="an11"></div>
+    <div id="an12"></div>
+    <div id="an13"></div>
+    <div id="an14"></div>
+    <div id="an15"></div>
+    <div id="an16"></div>
+    <div id="an17"></div>
+    <div id="an18"></div>
+  </div>
+  <div id="shadow"></div>
+</div>
+
+<style>
+
+/* GHOST */
+
+#red{
+  animation:upNDown infinite 0.5s;
+  position:relative;
+  width:140px;
+  height:140px;
+  display:grid;
+  grid-template-columns:repeat(14,1fr);
+  grid-template-rows:repeat(14,1fr);
+  grid-template-areas:
+    "a1 a2 a3 a4 a5 top0 top0 top0 top0 a10 a11 a12 a13 a14"
+    "b1 b2 b3 top1 top1 top1 top1 top1 top1 top1 top1 b12 b13 b14"
+    "c1 c2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 c13 c14"
+    "d1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 d14"
+    "e1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 e14"
+    "f1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 f14"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "st0 st0 an4 st1 an7 st2 an10 an10 st3 an13 st4 an16 st5 st5"
+    "an1 an2 an3 an5 an6 an8 an9 an9 an11 an12 an14 an15 an17 an18";
+}
+
+#top0,#top1,#top2,#top3,#top4,
+#st0,#st1,#st2,#st3,#st4,#st5{
+    background:#ff2d96;
+}
+
+#top0{grid-area:top0;}
+#top1{grid-area:top1;}
+#top2{grid-area:top2;}
+#top3{grid-area:top3;}
+#top4{grid-area:top4;}
+
+#st0{grid-area:st0;}
+#st1{grid-area:st1;}
+#st2{grid-area:st2;}
+#st3{grid-area:st3;}
+#st4{grid-area:st4;}
+#st5{grid-area:st5;}
+
+@keyframes upNDown{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+#eye,
+#eye1{
+    width:40px;
+    height:50px;
+    position:absolute;
+    top:30px;
+}
+
+#eye{
+    left:10px;
+}
+
+#eye1{
+    right:30px;
+}
+
+#eye::before,
+#eye1::before{
+    content:"";
+    background:white;
+    width:20px;
+    height:50px;
+    transform:translateX(10px);
+    display:block;
+    position:absolute;
+}
+
+#eye::after,
+#eye1::after{
+    content:"";
+    background:white;
+    width:40px;
+    height:30px;
+    transform:translateY(10px);
+    display:block;
+    position:absolute;
+}
+
+#pupil,
+#pupil1{
+    width:20px;
+    height:20px;
+    background:#4da6ff;
+    position:absolute;
+    top:50px;
+    z-index:1;
+    animation:eyesMovement infinite 3s;
+}
+
+#pupil{
+    left:10px;
+}
+
+#pupil1{
+    right:50px;
+}
+
+@keyframes eyesMovement{
+    0%,100%{
+        transform:translateX(0);
+    }
+    50%{
+        transform:translateX(10px);
+    }
+}
+
+#shadow{
+    background:black;
+    width:140px;
+    height:140px;
+    position:absolute;
+    border-radius:50%;
+    transform:rotateX(80deg);
+    filter:blur(20px);
+    top:80%;
+    animation:shadowMovement infinite 0.5s;
+}
+
+@keyframes shadowMovement{
+    0%,100%{
+        opacity:0.4;
+    }
+    50%{
+        opacity:0.1;
+    }
+}
+
+</style>
+
+</body>
+</html>

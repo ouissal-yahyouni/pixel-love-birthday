@@ -1,0 +1,520 @@
+<section class="page">
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="logo">💗 PIXEL LOVE</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="story.html">STORY</a></li>
+        <li><a href="memories.html">MEMORIES</a></li>
+        <li><a href="terminal.html">TERMINAL</a></li>
+        <li><a href="birthday.html">FINAL</a></li>
+    </ul>
+
+</nav>
+
+<style>
+
+/* NAVBAR */
+
+.navbar{
+    width:90%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 60px;
+    position:relative;
+    z-index:100;
+    
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 0 20px rgba(255,105,180,0.15);
+}
+
+/* LOGO */
+
+.logo{
+    font-family:'Press Start 2P',cursive;
+    font-size:14px;
+    color:white;
+
+    text-shadow:
+        0 0 10px #ff66cc,
+        0 0 20px #ff66cc,
+        0 0 35px #ff1493;
+
+    animation:logoGlow 2s infinite alternate;
+}
+
+@keyframes logoGlow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.03);
+    }
+
+}
+
+/* LINKS */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    list-style:none;
+}
+
+/* LINK STYLE */
+
+.nav-links a{
+    position:relative;
+
+    text-decoration:none;
+    color:white;
+
+    font-family:'Pixelify Sans',sans-serif;
+    font-size:18px;
+    letter-spacing:1px;
+
+    transition:0.35s ease;
+}
+
+/* HOVER */
+
+.nav-links a:hover{
+    color:#ffd6f4;
+    text-shadow:
+        0 0 10px #ff66cc;
+
+    transform:translateY(-3px);
+}
+
+/* ANIMATED UNDERLINE */
+
+.nav-links a::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:3px;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        90deg,
+        #ff66cc,
+        #ff9de2,
+        white
+    );
+
+    transition:0.4s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* ACTIVE PAGE */
+
+.nav-links a.active{
+    color:#ffd6f4;
+
+    text-shadow:
+        0 0 10px #ff66cc;
+}
+
+.nav-links a.active::after{
+    width:100%;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .navbar{
+        flex-direction:column;
+        gap:22px;
+        padding:20px;
+    }
+
+    .logo{
+        font-size:12px;
+        text-align:center;
+        line-height:1.8;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+    }
+
+    .nav-links a{
+        font-size:16px;
+    }
+
+}
+
+</style>
+    <!-- animated glowing background -->
+    <div class="bg"></div>
+
+    <!-- floating hearts -->
+    <span class="float f1">💖</span>
+    <span class="float f2">✨</span>
+    <span class="float f3">💞</span>
+    <span class="float f4">💖</span>
+
+    <h1 class="pixel-title">
+        FAVORITE MEMORIES 📸
+    </h1>
+
+    <div class="memory-grid">
+
+        <!-- CARD 1 -->
+        <div class="memory-card">
+            <div class="img-box">
+                <img src="images/photo1.jpg" alt="">
+            </div>
+
+            <h2>First Hug 🫂</h2>
+
+            <div class="feeling">
+                ✨ The Feeling
+            </div>
+
+            <p class="feeling-text">
+                That very first embrace where everything else disappeared.
+                It was the moment my heart finally felt at home.
+            </p>
+
+            <div class="desc">
+                💌 
+            </div>
+
+            <p class="desc-text">
+                
+            </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="memory-card">
+            <div class="img-box">
+                <img src="images/photo2.jpg" alt="">
+            </div>
+
+            <h2>Cheek Kiss 💋</h2>
+
+            <div class="feeling">
+                ✨ The Feeling
+            </div>
+
+            <p class="feeling-text">
+                A soft and sweet moment filled with pure affection,
+                one that still makes me smile every time I remember it.
+            </p>
+
+            <div class="desc">
+                💌 
+            </div>
+
+            <p class="desc-text">
+                
+            </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="memory-card">
+            <div class="img-box">
+                <img src="images/photo3.jpg" alt="">
+            </div>
+
+            <h2>Hand Holding 🤝</h2>
+
+            <div class="feeling">
+                ✨ The Feeling
+            </div>
+
+            <p class="feeling-text">
+                Strength, comfort, and the reassurance that no matter what happens,
+                you’ll always be there beside me.
+            </p>
+
+            <div class="desc">
+                💌
+            </div>
+
+            <p class="desc-text">
+                
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* IMPORT FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;600&display=swap');
+
+/* PAGE */
+.page{
+    min-height:100vh;
+    padding:80px 20px;
+    text-align:center;
+    font-family:'Pixelify Sans',sans-serif;
+    color:white;
+    position:relative;
+    overflow:hidden;
+    background:
+    linear-gradient(180deg,#090011,#140020,#1c002d);
+}
+
+/* GLOW BACKGROUND */
+.bg{
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 20%, #ff4fb3, transparent 35%),
+        radial-gradient(circle at 80% 30%, #7a5cff, transparent 40%),
+        radial-gradient(circle at 50% 90%, #00ffd5, transparent 35%);
+    filter:blur(100px);
+    opacity:0.4;
+    animation:bgMove 8s infinite alternate ease-in-out;
+    z-index:0;
+}
+
+@keyframes bgMove{
+    0%{
+        transform:translate(-30px,-20px) scale(1);
+    }
+    100%{
+        transform:translate(40px,30px) scale(1.1);
+    }
+}
+
+/* TITLE */
+.pixel-title{
+    position:relative;
+    z-index:2;
+    font-family:'Press Start 2P',cursive;
+    font-size:22px;
+    margin-bottom:60px;
+    color:#fff;
+    text-shadow:
+        0 0 10px #ff4fb3,
+        0 0 20px #ff4fb3,
+        0 0 40px #ff4fb3;
+    animation:titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.03);
+    }
+}
+
+/* GRID */
+.memory-grid{
+    position:relative;
+    z-index:2;
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    flex-wrap:wrap;
+}
+
+/* CARD */
+.memory-card{
+    width:320px;
+    padding:18px;
+    border-radius:28px;
+    background:rgba(255,255,255,0.08);
+    border:2px solid rgba(255,255,255,0.12);
+    backdrop-filter:blur(14px);
+    box-shadow:
+        0 0 20px rgba(255,0,140,0.2),
+        inset 0 0 10px rgba(255,255,255,0.05);
+
+    transition:0.5s ease;
+    position:relative;
+    overflow:hidden;
+
+    animation:cardFloat 5s infinite ease-in-out;
+}
+
+/* glowing border animation */
+.memory-card::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background:linear-gradient(
+        45deg,
+        #ff4fb3,
+        #7a5cff,
+        #00ffd5,
+        #ff4fb3
+    );
+    background-size:400%;
+    z-index:-1;
+    filter:blur(15px);
+    opacity:0;
+    transition:0.5s;
+}
+
+.memory-card:hover::before{
+    opacity:1;
+    animation:borderGlow 6s linear infinite;
+}
+
+@keyframes borderGlow{
+    0%{ background-position:0 0; }
+    100%{ background-position:400% 0; }
+}
+
+/* HOVER */
+.memory-card:hover{
+    transform:
+        translateY(-12px)
+        rotateX(6deg)
+        rotateY(-6deg)
+        scale(1.03);
+
+    box-shadow:
+        0 0 40px rgba(255,0,150,0.45);
+}
+
+/* IMAGE */
+.img-box{
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.memory-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.5s;
+    border:2px solid #FF4F6C;
+}
+
+.memory-card:hover img{
+    transform:scale(1.08);
+}
+
+/* TITLES */
+.memory-card h2{
+    margin-top:18px;
+    font-size:24px;
+    color:#fff;
+    text-shadow:0 0 10px #FF4F4F;
+}
+
+/* SECTION LABELS */
+.feeling,
+.desc{
+    margin-top:18px;
+    font-size:18px;
+    color:#ff9ed2;
+    font-weight:bold;
+    text-align:left;
+}
+
+/* TEXT */
+.feeling-text,
+.desc-text{
+    margin-top:8px;
+    font-size:16px;
+    line-height:1.7;
+    color:#f8dfff;
+    text-align:left;
+}
+
+/* FLOATING EMOJIS */
+.float{
+    position:absolute;
+    font-size:28px;
+    z-index:1;
+    opacity:0.7;
+    animation:float 6s infinite ease-in-out;
+}
+
+.f1{
+    top:10%;
+    left:10%;
+}
+
+.f2{
+    top:20%;
+    right:10%;
+    animation-delay:1s;
+}
+
+.f3{
+    bottom:10%;
+    left:45%;
+    animation-delay:2s;
+}
+
+.f4{
+    bottom:20%;
+    right:20%;
+    animation-delay:3s;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-25px) rotate(10deg);
+    }
+}
+
+/* CARD FLOAT */
+@keyframes cardFloat{
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .pixel-title{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .memory-card{
+        width:100%;
+        max-width:340px;
+    }
+
+}
+
+</style>
